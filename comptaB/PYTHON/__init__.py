@@ -11,7 +11,7 @@ def create_app():
     secret = secrets.token_urlsafe(32)
 
     app.secret_key = secret
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/dbedition'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/dbcomptab'
     db.init_app(app)
 
     login_manager = LoginManager()

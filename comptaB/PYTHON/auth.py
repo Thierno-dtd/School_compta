@@ -1,11 +1,13 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required
-from .models import Ecole, Eleve, User
+from .models import Ecole, Eleve, Paiement, User
 from . import db
 import pandas as pd
 
 auth = Blueprint('auth', __name__)
+
+global ch_id_ecole, ch_id_classe
 
 @auth.route('/login')
 def login():
@@ -66,6 +68,14 @@ def logout():
     logout_user()
     return redirect(url_for('main.index'))
 
+@auth.route('/main/AddEleve', methods=['POST'])
+@login_required
+def choix_ecole_classe():
+    ch_id_ecole = request.form.get('checole')
+    ch_id_classe = request.form.get('chclasse')
+    
+
+
 
 @auth.route('/main/AddEleve', methods=['POST'])
 @login_required
@@ -90,7 +100,7 @@ def import_csv():
 
             # Parcourir les lignes du dataframe et créer des instances Etudiant
             for index, row in df.iterrows():
-                etudiant = Etudiant(nom=row['nom'], prenom=row['prenom'], age=row['age'])
+                etudiant = Eleve(nom=row['nom'], prenom=row['prenom'])
                 db.session.add(etudiant)
 
             # Effectuer un commit pour enregistrer les étudiants dans la base de données
@@ -149,6 +159,7 @@ def payement(id):
     if p<=float(0) :
         flash('La somme saisi est négative/nulle')
     else : 
+        new_paie = Paiement()
         
         
     
