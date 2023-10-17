@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required
-from .models import Ecole, Eleve, Paiement, User
+from .models import Ecole, EcoleClasse, Eleve, Paiement, User
 from . import db
 import pandas as pd
 
@@ -159,7 +159,11 @@ def payement(id):
     if p<=float(0) :
         flash('La somme saisi est négative/nulle')
     else : 
-        new_paie = Paiement()
+        annee = request.form.get('annee')
+        class_id = request.form.get('idClasse')
+        sommeT = EcoleClasse.query.filter_by(annee = annee,class_id = class_id ).first().montant
+        if p <= sommeT:
+            new_paie = Paiement()
         
         
     

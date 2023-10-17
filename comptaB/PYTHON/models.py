@@ -80,6 +80,14 @@ class Ecole(db.Model):
     nom = db.Column(db.String(100), nullable=False)
     classecoleecole = db.relationship('EcoleClasse',primaryjoin="Ecole.id == EcoleClasse.ecole_id" , backref = 'ecoles', lazy = True)
   
+  
+  
+class Annee(db.Model):
+    __tablename__ = 'annees'
+    id = db.Column(db.Integer, primary_key=True)
+    annee = db.Column(db.String(8), nullable=False)
+    anneeclassecoleecole = db.relationship('EcoleClasse',primaryjoin="Annee.id == EcoleClasse.annee" , backref = 'annees', lazy = True)
+    
 
 class Classe(db.Model):
     __tablename__ = 'classes'
@@ -106,7 +114,8 @@ class EcoleClasse(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     ecole_id = db.Column(db.Integer, db.ForeignKey('ecoles.id'), nullable=False)
     classe_id = db.Column(db.Integer, db.ForeignKey('classes.id'), nullable=False)
-    annee = db.Column(db.String(15), nullable = False)
+    annee = db.Column(db.Integer, db.ForeignKey('annees.id'), nullable=False)
+    
     montant = db.Column(db.Float, nullable=False)
     paiements = db.relationship('Paiement', backref='ecoleclasse', lazy=True)
     eleveclass = db.relationship('EleveClasse', backref='ecoleclasse', lazy=True)
@@ -127,6 +136,6 @@ class Paiement(db.Model):
 class EleveClasse(db.Model):
     __tablename__ = "eleveclasses"
     id = db.Column(db.Integer, primary_key=True)
-    EcoleClasseeleveclass = db.Column(db.Integer, db.ForeignKey('ecoleclasse.id'), nullable = False)
+    ecoleclasse_id = db.Column(db.Integer, db.ForeignKey('ecoleclasse.id'), nullable = False)
     eleve_id = db.Column(db.Integer, db.ForeignKey('eleves.id'), nullable = False)
     

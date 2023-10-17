@@ -83,7 +83,7 @@ class Paiement(db.Model):
 class EleveClasse(db.Model):
     __tablename__ = "eleveclasses"
     id = db.Column(db.Integer, primary_key=True)
-    EcoleClasseeleveclass = db.Column(db.Integer, db.ForeignKey('ecoleclasse.id'), nullable = False)
+    ecoleclasse_id = db.Column(db.Integer, db.ForeignKey('ecoleclasse.id'), nullable = False)
     eleve_id = db.Column(db.Integer, db.ForeignKey('eleves.id'), nullable = False)
     
     

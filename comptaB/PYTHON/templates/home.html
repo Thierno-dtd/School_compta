@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet/less" href="../static/css/styles.less" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.11.3/less.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="eclat">
+        <a href="home.html">school gestion</a>
+        <div class="right">
+          <div class="bout">
+            <a href="#" id="showModal">Ecoles</a>
+          </div>
+          <div class="divprofil">
+          <div class="profil">
+            <img
+              src="../static/images/icons8_male_user_30px_1.png"
+              alt="profil"
+            />
+            <p>Admin</p>
+          </div>
+          <div class="profilhide">
+            <p class="niveau">NOM:</p>
+            <p class="name">Admin</p>
+            <p class="niveau">PRENOM:</p>
+            <p class="name">Koffi</p>
+            <p class="niveau">MODIFIER LE PROFIL:</p>
+            <button type="submit" class="modifprofil" id="showProfil">modifier</button>
+            <p class="niveau">LOG-OUT:</p>
+            <button type="submit" class="deconnexion">Déconnexion</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbarre">
+      <!--<div class="float">
+        <div class="an">
+          <div class="annee"><a href="#">2021</a></div>
+          <div class="annee"><a href="#">2022</a></div>
+          <div class="annee"><a href="#">2023</a></div>
+        </div>
+        <div class="nav">
+          <p>classe</p>
+          <div class="lien">
+            <a href="">6eme</a><a href="">5eme</a><a href="">4eme</a
+            ><a href="">3eme</a>
+          </div>
+        </div>
+      </div>-->
+      <div class="float" id="ffloat">
+        <div class="navbar">
+          <div class="an"onclick="toggleNavbar()"><a href="#" >22-23</a></div>
+          <div class="an"onclick="toggleNavbar()"><a href="#">21-22</a></div>
+          <div class="an"onclick="toggleNavbar()"><a href="#">20-21</a></div>
+
+          <div class="boutplus">
+            <img src="../static/images/icons8_add_37px.png" alt="" />
+          </div>
+        </div>
+
+        <!-- Second collapsible navbar -->
+        <div class="collapsible-navbar" id="collapsibleNavbar">
+          <div class="menuecole">
+            <div class="nomecole">
+              <p>IAI</p>
+              <img
+                src="../static/images/icons8_back_25px.png"
+                alt="hand"
+                class="imghide"
+              />
+              <img
+                src="../static/images/icons8_expand_arrow_25px.png"
+                alt="hand"
+                class="imgshow"
+              />
+            </div>
+            <div class="ecolecontain">
+              <div class="menu">
+                <a href="#" data-route="/dashboard">DASHBOARD</a>
+                <img
+                  src="../static/images/icons8_hand_right_25px_2.png"
+                  alt="hand"
+                />
+              </div>  
+              <p class="niveau">college</p>
+              <div class="menu">
+                <a href="#" data-route="/classe/5">6eme</a>
+                <img
+                  src="../static/images/icons8_hand_right_25px_2.png"
+                  alt="hand"
+                />
+              </div>
+              <div class="menu">
+                <a href="#">5eme</a
+                ><img
+                  src="../static/images/icons8_hand_right_25px_2.png"
+                  alt="hand"
+                />
+              </div>
+              <div class="menu">
+                <a href="#" data-route="/classe/5">4eme</a
+                ><img
+                  src="../static/images/icons8_hand_right_25px_2.png"
+                  alt="hand"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="menuecole">
+            <div class="nomecole">
+              <p>AMITIE</p>
+              <img
+                src="../static/images/icons8_back_25px.png"
+                alt="hand"
+                class="imghide"
+              />
+              <img
+                src="../static/images/icons8_expand_arrow_25px.png"
+                alt="hand"
+                class="imgshow"
+              />
+            </div>
+            <div class="ecolecontain">
+              <div class="menu">
+                <a href="#" data-route="/dashboard">DASHBOARD</a>
+                <img
+                  src="../static/images/icons8_hand_right_25px_2.png"
+                  alt="hand"
+                />
+              </div>
+              <p class="niveau">college</p>
+              <div class="menu">
+                <a href="#" data-route="/classe/5">5eme</a>
+                <img
+                  src="../static/images/icons8_hand_right_25px_2.png"
+                  alt="hand"
+                />
+              </div>
+              <div class="menu">
+                <a href="#" data-route="/classe/5">4eme</a
+                ><img
+                  src="../static/images/icons8_hand_right_25px_2.png"
+                  alt="hand"
+                />
+              </div>
+              <div class="menu">
+                <a href="#" data-route="/classe/5">3eme</a
+                ><img
+                  src="../static/images/icons8_hand_right_25px_2.png"
+                  alt="hand"
+                />
+              </div>  
+              <p class="niveau">lycee</p>
+              <div class="menu">
+                <a href="#" data-route="/classe/5">Seconde</a>
+                <img
+                  src="../static/images/icons8_hand_right_25px_2.png"
+                  alt="hand"
+                />
+              </div>
+              <div class="menu">
+                <a href="#" data-route="/classe/5">premiere</a
+                ><img
+                  src="../static/images/icons8_hand_right_25px_2.png"
+                  alt="hand"
+                />
+              </div>
+              <div class="menu">
+                <a href="#" data-route="/classe/5">Terminale</a
+                ><img
+                  src="../static/images/icons8_hand_right_25px_2.png"
+                  alt="hand"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        INTRODUCTION Le gestionnaire de périphériques est un outil permettant de
+        gérer les périphériques de l’ordinateur. A cet effet il permet
+        d’installer et de mettre à jour les pilotes des périphériques matériels,
+        les paramétrer, et d’assurer le dépannage en cas de problème. Un pilote
+        de périphérique est un programme qui permet au système d’exploitation de
+        communiquer avec un périphérique matériel spécifique. Avant que le
+        système d’exploitation ne puisse utiliser de nouveaux matériels, il faut
+        installer un pilote adéquat. I. CONFIGURER UN PÉRIPHÉRIQUE DE
+        L’ORDINATEUR. 1. Définitions et Rôles On appelle périphérique tout
+        composant matériel qui se connecte à l’unité central. Il existe en
+        principe des périphériques d’entrée, tels que clavier, souris et
+        scanner1 , et les périphériques de sorties comme l’écran, l’imprimante,
+        et le vidéo projecteur2 . Mais bien souvent, les périphériques servent à
+        la fois à entrer et à sortir des données. Entre autres exemple les
+        périphériques d’entrée/sortie comme le scanner est en principe un
+        périphérique d’entrée mais en réalité les communications avec
+        l’ordinateur sont bidirectionnelles puisque le scanner est commandé par
+        des programmes de l’ordinateur. À l’inverse, une imprimante est en
+        principe un périphérique de sortie, mais là aussi les communications
+        entre l’imprimante et l’ordinateur se font dans les deux sens afin que
+        l’imprimante puisse informer le PC de l’état des cartouches d’encre, de
+        l’absence de papier. Par ailleurs, le vidéo projeteur la 1 Appelé encore
+        scanneur est un périphérique informatique qui permet de numériser des
+        documents. 2 Appareil de projection conçu pour reproduire une source
+        vidéo dite vidéogramme ou informatique sur un écran séparé ou sur une
+        surface murale blanche. NOUVEAU PROGRAMME INFO communication est
+        unidirectionnel c’est-à-dire qu’il reçoit l’information (Signal) du PC
+        et l’envoie à l’utilisateur. 2. Gestionnaires de périphériques La
+        gestion et ou de configuration des périphériques en occurrence du
+        scanner, vidéo projecteur et imprimante ont particulièrement la même
+        procédure. La procédure de configuration des périphériques sous le
+        système d’exploitation Windows est la suivante :  Aller sur MENU
+        DEMARRER  cliquer sur Matériel et Audio  choisir Gestionnaire des
+        périphériques Les pages suivantes vont s’afficher : Entre autre, le
+        gestionnaire de periphériques donnera d’emblée un pemier aperçu sur
+        l’état de marche des périphérique. Ceux pour lesquels les pilotes ne
+        conviennent pas sont marqué par un point d’interrogation et ou
+        d’exclamation jaune :  Un clic droit sur ces périphèriques permet de
+        consulter les propriétés et de poursuivre en recherchant un pilote
+        adapté. N.B : la première chose à faire pour apprendre à utiliser le
+        gestionnaire de périphériques est certainement d’utiliser l’aide et de
+        lire les informations qui s’y trouvent. NOUVEAU PROGRAMME INFO II.
+        INSTALLATION ET MISE A JOUR DES PILOTES PERIPHERIQUES 1. Installation
+        des pilotes périphériques La procédure d’installation d’un pilote
+        présente deux cas de figures :  Le pilote peut être directement
+        installé en ligne c'est-à-dire on connecte l’ordinateur à internet, puis
+        on installe en téléchargeant ;  Le pilote peut être installé hors
+        ligne. Ici on dispose du support d’installation agréée. 2. Mises à jour
+        des pilotes périphériques Elle permet d’ajouter quelques petites
+        fonctions supplémentaires au pilote. La mise à jour d’un pilote concerne
+        le système. La mise à jour de pilotes périphérique se fait généralement
+        à partir du gestionnaire de périphériques suivant cette procédure.
+        Sélectionner le périphérique pour lequel dont on souhaite mettre à jour
+        le pilote, puis lancer la mise à jour de l’une de ces façons :  Un clic
+        droit sur le nom de ce périphérique donne directement accès à la
+        commande ‘’Mettre à jour le Pilote…’’ dans le menu contextuel ;  Un
+        double clic sur le nom du pilote ouvre la fenêtre de propriété où l’on
+        retrouve la commande ‘’Mettre à jour le pilote…’’ dans l’onglet pilote.
+        III. INSTALLATION ET CONFIGURATION DE QUELQUES PERIPHERIQUES Pour
+        installer et configurer un périphérique matériel, il y’a différentes
+        solutions. Soit votre matériel est intégralement reconnu par votre
+        système d’exploitation Plug and Play, soit vous devrez installer un
+        pilote pour le faire fonctionner on parle là de périphérique. Soit, dans
+        le pire cas, votre matériel ne dispose pas de pilote pour votre système
+        d’exploitation. Cela ne veut pas dire qu’un pilote compatible n’existe
+        pas, mais il va falloir l’installer à travers le CDRom contenant le
+        pilote qui accompagne le matériel (Imprimante, Scanner, Vidéo –
+        Projecteur…). S’il s’agit d’un périphérique Plug and Play,
+        l’installation sera facilitée car votre système de d’exploitation (en
+        général Windows) le détectera automatiquement, l’installera et le
+        configurera. Le gestionnaire de périphériques est un outil permettant de
+        gérer les périphériques de l’ordinateur. A cet effet il permet
+        d’installer et de mettre à jour les pilotes des périphériques matériels,
+        les paramétrer, et d’assurer le dépannage en cas de problème. Un pilote
+        de périphérique est un programme qui permet au système d’exploitation de
+        communiquer avec un périphérique matériel spécifique. Avant que le
+        système d’exploitation ne puisse utiliser de nouveaux matériels, il faut
+        installer un pilote adéquat. I. CONFIGURER UN PÉRIPHÉRIQUE DE
+        L’ORDINATEUR. 1. Définitions et Rôles On appelle périphérique tout
+        composant matériel qui se connecte à l’unité central. Il existe en
+        principe des périphériques d’entrée, tels que clavier, souris et
+        scanner1 , et les périphériques de sorties comme l’écran, l’imprimante,
+        et le vidéo projecteur2 . Mais bien souvent, les périphériques servent à
+        la fois à entrer et à sortir des données. Entre autres exemple les
+        périphériques d’entrée/sortie comme le scanner est en principe un
+        périphérique d’entrée mais en réalité les communications avec
+        l’ordinateur sont bidirectionnelles puisque le scanner est commandé par
+        des programmes de l’ordinateur. À l’inverse, une imprimante est en
+        principe un périphérique de sortie, mais là aussi les communications
+        entre l’imprimante et l’ordinateur se font dans les deux sens afin que
+        l’imprimante puisse informer le PC de l’état des cartouches d’encre, de
+        l’absence de papier. Par ailleurs, le vidéo projeteur la 1 Appelé encore
+        scanneur est un périphérique informatique qui permet de numériser des
+        documents. 2 Appareil de projection conçu pour reproduire une source
+        vidéo dite vidéogramme ou informatique sur un écran séparé ou sur une
+        surface murale blanche. NOUVEAU PROGRAMME INFO communication est
+        unidirectionnel c’est-à-dire qu’il reçoit l’information (Signal) du PC
+        et l’envoie à l’utilisateur. 2. Gestionnaires de périphériques La
+        gestion et ou de configuration des périphériques en occurrence du
+        scanner, vidéo projecteur et imprimante ont particulièrement la même
+        procédure. La procédure de configuration des périphériques sous le
+        système d’exploitation Windows est la suivante :  Aller sur MENU
+        DEMARRER  cliquer sur Matériel et Audio  choisir Gestionnaire des
+        périphériques Les pages suivantes vont s’afficher : Entre autre, le
+        gestionnaire de periphériques donnera d’emblée un pemier aperçu sur
+        l’état de marche des périphérique. Ceux pour lesquels les pilotes ne
+        conviennent pas sont marqué par un point d’interrogation et ou
+        d’exclamation jaune :  Un clic droit sur ces périphèriques permet de
+        consulter les propriétés et de poursuivre en recherchant un pilote
+        adapté. N.B : la première chose à faire pour apprendre à utiliser le
+        gestionnaire de périphériques est certainement d’utiliser l’aide et de
+        lire les informations qui s’y trouvent. NOUVEAU PROGRAMME INFO II.
+        INSTALLATION ET MISE A JOUR DES PILOTES PERIPHERIQUES 1. Installation
+        des pilotes périphériques La procédure d’installation d’un pilote
+        présente deux cas de figures :  Le pilote peut être directement
+        installé en ligne c'est-à-dire on connecte l’ordinateur à internet, puis
+        on installe en téléchargeant ;  Le pilote peut être installé hors
+        ligne. Ici on dispose du support d’installation agréée. 2. Mises à jour
+        des pilotes périphériques Elle permet d’ajouter quelques petites
+        fonctions supplémentaires au pilote. La mise à jour d’un pilote concerne
+        le système. La mise à jour de pilotes périphérique se fait généralement
+        à partir du gestionnaire de périphériques suivant cette procédure.
+        Sélectionner le périphérique pour lequel dont on souhaite mettre à jour
+        le pilote, puis lancer la mise à jour de l’une de ces façons :  Un clic
+        droit sur le nom de ce périphérique donne directement accès à la
+        commande ‘’Mettre à jour le Pilote…’’ dans le menu contextuel ;  Un
+        double clic sur le nom du pilote ouvre la fenêtre de propriété où l’on
+        retrouve la commande ‘’Mettre à jour le pilote…’’ dans l’onglet pilote.
+        III. INSTALLATION ET CONFIGURATION DE QUELQUES PERIPHERIQUES Pour
+        installer et configurer un périphérique matériel, il y’a différentes
+        solutions. Soit votre matériel est intégralement reconnu par votre
+        système d’exploitation Plug and Play, soit vous devrez installer un
+        pilote pour le faire fonctionner on parle là de périphérique. Soit, dans
+        le pire cas, votre matériel ne dispose pas de pilote pour votre système
+        d’exploitation. Cela ne veut pas dire qu’un pilote compatible n’existe
+        pas, mais il va falloir l’installer à travers le CDRom contenant le
+        pilote qui accompagne le matériel (Imprimante, Scanner, Vidéo –
+        Projecteur…). S’il s’agit d’un périphérique Plug and Play,
+        l’installation sera facilitée car votre système de d’exploitation (en
+        général Windows) le détectera automatiquement, l’installera et le
+        configurera. Le gestionnaire de périphériques est un outil permettant de
+        gérer les périphériques de l’ordinateur. A cet effet il permet
+        d’installer et de mettre à jour les pilotes des périphériques matériels,
+        les paramétrer, et d’assurer le dépannage en cas de problème. Un pilote
+        de périphérique est un programme qui permet au système d’exploitation de
+        communiquer avec un périphérique matériel spécifique. Avant que le
+        système d’exploitation ne puisse utiliser de nouveaux matériels, il faut
+        installer un pilote adéquat. I. CONFIGURER UN PÉRIPHÉRIQUE DE
+        L’ORDINATEUR. 1. Définitions et Rôles On appelle périphérique tout
+        composant matériel qui se connecte à l’unité central. Il existe en
+        principe des périphériques d’entrée, tels que clavier, souris et
+        scanner1 , et les périphériques de sorties comme l’écran, l’imprimante,
+        et le vidéo projecteur2 . Mais bien souvent, les périphériques servent à
+        la fois à entrer et à sortir des données. Entre autres exemple les
+        périphériques d’entrée/sortie comme le scanner est en principe un
+        périphérique d’entrée mais en réalité les communications avec
+        l’ordinateur sont bidirectionnelles puisque le scanner est commandé par
+        des programmes de l’ordinateur. À l’inverse, une imprimante est en
+        principe un périphérique de sortie, mais là aussi les communications
+        entre l’imprimante et l’ordinateur se font dans les deux sens afin que
+        l’imprimante puisse informer le PC de l’état des cartouches d’encre, de
+        l’absence de papier. Par ailleurs, le vidéo projeteur la 1 Appelé encore
+        scanneur est un périphérique informatique qui permet de numériser des
+        documents. 2 Appareil de projection conçu pour reproduire une source
+        vidéo dite vidéogramme ou informatique sur un écran séparé ou sur une
+        surface murale blanche. NOUVEAU PROGRAMME INFO communication est
+        unidirectionnel c’est-à-dire qu’il reçoit l’information (Signal) du PC
+        et l’envoie à l’utilisateur. 2. Gestionnaires de périphériques La
+        gestion et ou de configuration des périphériques en occurrence du
+        scanner, vidéo projecteur et imprimante ont particulièrement la même
+        procédure. La procédure de configuration des périphériques sous le
+        système d’exploitation Windows est la suivante :  Aller sur MENU
+        DEMARRER  cliquer sur Matériel et Audio  choisir Gestionnaire des
+        périphériques Les pages suivantes vont s’afficher : Entre autre, le
+        gestionnaire de periphériques donnera d’emblée un pemier aperçu sur
+        l’état de marche des périphérique. Ceux pour lesquels les pilotes ne
+        conviennent pas sont marqué par un point d’interrogation et ou
+        d’exclamation jaune :  Un clic droit sur ces périphèriques permet de
+        consulter les propriétés et de poursuivre en recherchant un pilote
+        adapté. N.B : la première chose à faire pour apprendre à utiliser le
+        gestionnaire de périphériques est certainement d’utiliser l’aide et de
+        lire les informations qui s’y trouvent. NOUVEAU PROGRAMME INFO II.
+        INSTALLATION ET MISE A JOUR DES PILOTES PERIPHERIQUES 1. Installation
+        des pilotes périphériques La procédure d’installation d’un pilote
+        présente deux cas de figures :  Le pilote peut être directement
+        installé en ligne c'est-à-dire on connecte l’ordinateur à internet, puis
+        on installe en téléchargeant ;  Le pilote peut être installé hors
+        ligne. Ici on dispose du support d’installation agréée. 2. Mises à jour
+        des pilotes périphériques Elle permet d’ajouter quelques petites
+        fonctions supplémentaires au pilote. La mise à jour d’un pilote concerne
+        le système. La mise à jour de pilotes périphérique se fait généralement
+        à partir du gestionnaire de périphériques suivant cette procédure.
+        Sélectionner le périphérique pour lequel dont on souhaite mettre à jour
+        le pilote, puis lancer la mise à jour de l’une de ces façons :  Un clic
+        droit sur le nom de ce périphérique donne directement accès à la
+        commande ‘’Mettre à jour le Pilote…’’ dans le menu contextuel ;  Un
+        double clic sur le nom du pilote ouvre la fenêtre de propriété où l’on
+        retrouve la commande ‘’Mettre à jour le pilote…’’ dans l’onglet pilote.
+        III. INSTALLATION ET CONFIGURATION DE QUELQUES PERIPHERIQUES Pour
+        installer et configurer un périphérique matériel, il y’a différentes
+        solutions. Soit votre matériel est intégralement reconnu par votre
+        système d’exploitation Plug and Play, soit vous devrez installer un
+        pilote pour le faire fonctionner on parle là de périphérique. Soit, dans
+        le pire cas, votre matériel ne dispose pas de pilote pour votre système
+        d’exploitation. Cela ne veut pas dire qu’un pilote compatible n’existe
+        pas, mais il va falloir l’installer à travers le CDRom contenant le
+        pilote qui accompagne le matériel (Imprimante, Scanner, Vidéo –
+        Projecteur…). S’il s’agit d’un périphérique Plug and Play,
+        l’installation sera facilitée car votre système de d’exploitation (en
+        général Windows) le détectera automatiquement, l’installera et le
+        configurera. Le gestionnaire de périphériques est un outil permettant de
+        gérer les périphériques de l’ordinateur. A cet effet il permet
+        d’installer et de mettre à jour les pilotes des périphériques matériels,
+        les paramétrer, et d’assurer le dépannage en cas de problème. Un pilote
+        de périphérique est un programme qui permet au système d’exploitation de
+        communiquer avec un périphérique matériel spécifique. Avant que le
+        système d’exploitation ne puisse utiliser de nouveaux matériels, il faut
+        installer un pilote adéquat. I. CONFIGURER UN PÉRIPHÉRIQUE DE
+        L’ORDINATEUR. 1. Définitions et Rôles On appelle périphérique tout
+        composant matériel qui se connecte à l’unité central. Il existe en
+        principe des périphériques d’entrée, tels que clavier, souris et
+        scanner1 , et les périphériques de sorties comme l’écran, l’imprimante,
+        et le vidéo projecteur2 . Mais bien souvent, les périphériques servent à
+        la fois à entrer et à sortir des données. Entre autres exemple les
+        périphériques d’entrée/sortie comme le scanner est en principe un
+        périphérique d’entrée mais en réalité les communications avec
+        l’ordinateur sont bidirectionnelles puisque le scanner est commandé par
+        des programmes de l’ordinateur. À l’inverse, une imprimante est en
+        principe un périphérique de sortie, mais là aussi les communications
+        entre l’imprimante et l’ordinateur se font dans les deux sens afin que
+        l’imprimante puisse informer le PC de l’état des cartouches d’encre, de
+        l’absence de papier. Par ailleurs, le vidéo projeteur la 1 Appelé encore
+        scanneur est un périphérique informatique qui permet de numériser des
+        documents. 2 Appareil de projection conçu pour reproduire une source
+        vidéo dite vidéogramme ou informatique sur un écran séparé ou sur une
+        surface murale blanche. NOUVEAU PROGRAMME INFO communication est
+        unidirectionnel c’est-à-dire qu’il reçoit l’information (Signal) du PC
+        et l’envoie à l’utilisateur. 2. Gestionnaires de périphériques La
+        gestion et ou de configuration des périphériques en occurrence du
+        scanner, vidéo projecteur et imprimante ont particulièrement la même
+        procédure. La procédure de configuration des périphériques sous le
+        système d’exploitation Windows est la suivante :  Aller sur MENU
+        DEMARRER  cliquer sur Matériel et Audio  choisir Gestionnaire des
+        périphériques Les pages suivantes vont s’afficher : Entre autre, le
+        gestionnaire de periphériques donnera d’emblée un pemier aperçu sur
+        l’état de marche des périphérique. Ceux pour lesquels les pilotes ne
+        conviennent pas sont marqué par un point d’interrogation et ou
+        d’exclamation jaune :  Un clic droit sur ces périphèriques permet de
+        consulter les propriétés et de poursuivre en recherchant un pilote
+        adapté. N.B : la première chose à faire pour apprendre à utiliser le
+        gestionnaire de périphériques est certainement d’utiliser l’aide et de
+        lire les informations qui s’y trouvent. NOUVEAU PROGRAMME INFO II.
+        INSTALLATION ET MISE A JOUR DES PILOTES PERIPHERIQUES 1. Installation
+        des pilotes périphériques La procédure d’installation d’un pilote
+        présente deux cas de figures :  Le pilote peut être directement
+        installé en ligne c'est-à-dire on connecte l’ordinateur à internet, puis
+        on installe en téléchargeant ;  Le pilote peut être installé hors
+        ligne. Ici on dispose du support d’installation agréée. 2. Mises à jour
+        des pilotes périphériques Elle permet d’ajouter quelques petites
+        fonctions supplémentaires au pilote. La mise à jour d’un pilote concerne
+        le système. La mise à jour de pilotes périphérique se fait généralement
+        à partir du gestionnaire de périphériques suivant cette procédure.
+        Sélectionner le périphérique pour lequel dont on souhaite mettre à jour
+        le pilote, puis lancer la mise à jour de l’une de ces façons :  Un clic
+        droit sur le nom de ce périphérique donne directement accès à la
+        commande ‘’Mettre à jour le Pilote…’’ dans le menu contextuel ;  Un
+        double clic sur le nom du pilote ouvre la fenêtre de propriété où l’on
+        retrouve la commande ‘’Mettre à jour le pilote…’’ dans l’onglet pilote.
+        III. INSTALLATION ET CONFIGURATION DE QUELQUES PERIPHERIQUES Pour
+        installer et configurer un périphérique matériel, il y’a différentes
+        solutions. Soit votre matériel est intégralement reconnu par votre
+        système d’exploitation Plug and Play, soit vous devrez installer un
+        pilote pour le faire fonctionner on parle là de périphérique. Soit, dans
+        le pire cas, votre matériel ne dispose pas de pilote pour votre système
+        d’exploitation. Cela ne veut pas dire qu’un pilote compatible n’existe
+        pas, mais il va falloir l’installer à travers le CDRom contenant le
+        pilote qui accompagne le matériel (Imprimante, Scanner, Vidéo –
+        Projecteur…). S’il s’agit d’un périphérique Plug and Play,
+        l’installation sera facilitée car votre système de d’exploitation (en
+        général Windows) le détectera automatiquement, l’installera et le
+        configurera.
+      </div>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="closeModal">&times;</span>
+          <h1>Liste des Ecoles</h1>
+          <div class="containerschool">
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+            <div class="ecole">
+              <div class="school">
+                <img
+                  src="../static/images/icons8_school_30px.png"
+                  alt="school"
+                />
+              </div>
+              <p>IAI</p>
+            </div>
+          </div>
+          <button type="submit" id="showModall">Add</button>
+        </div>
+      </div>
+
+      <div id="myModall" class="modal">
+        <div class="modal-content">
+          <span class="close" id="closeModall">&times;</span>
+          <h1>Création d'une école</h1>
+          <form action="" method="post">
+            <label for="">Nom de l'école</label>
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Veuillez entrer le libellée de l'établissement"
+            />
+            <button type="submit">soumettre</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="myProfil" class="modal">
+        <div class="modal-content">
+          <span class="close" id="closeProfil">&times;</span>
+          <h1>Profil</h1>
+          <form action="" method="post">
+            <label for="">Nom:</label>
+            <input
+              type="text"
+              name=""
+              id=""
+              value="Admin"
+              placeholder="Veuillez saisir votre nom"
+            />
+            <br>
+            <label for="">Prenom:</label>
+            <input
+              type="text"
+              name=""
+              id=""
+              value="Koffi"
+              placeholder="Veuillez saisir votre prénom"
+            />
+            <button type="submit">soumettre</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+
+      // pour l'apparution et la disparution de la 2eme navbar
+      function toggleNavbar() {
+        var x = document.getElementById("collapsibleNavbar");
+        var y = document.getElementById("ffloat");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+          y.style.width = "100px";
+        } else {
+          x.style.display = "block";
+          y.style.width = "300px";
+        }
+      }
+
+
+      //l'activation et le survol de la 1ere navbar
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbarItems = document.querySelectorAll(".navbar .an");
+
+        navbarItems.forEach(function (item) {
+          item.addEventListener("click", function () {
+            // Réinitialise tous les éléments à une opacité de 0.4
+            navbarItems.forEach(function (item) {
+              item.style.opacity = "0.4";
+            });
+            // Sauf l'élément actuel, qu'on garde à l'opacité normale
+            item.style.opacity = "1";
+          });
+        });
+      });
+
+
+      //affichage de -> en fonction du choix de l'element dans la 2eme navbar
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuItems = document.querySelectorAll(".menu");
+
+        menuItems.forEach(function (item) {
+          item.addEventListener("click", function () {
+            // Masque toutes les images au départ
+            menuItems.forEach(function (menu) {
+              const image = menu.querySelector("img");
+              if (image) {
+                image.style.display = "none";
+              }
+            });
+
+            const image = item.querySelector("img"); // Sélectionne l'image dans le div cliqué
+            if (image) {
+              image.style.display = "block"; // Affiche l'image
+            }
+          });
+        });
+      });
+
+
+
+//affichage de ma boite de dialogue personnalisé
+      const showModalButton = document.getElementById("showModal");
+      const closeModalButton = document.getElementById("closeModal");
+      const modal = document.getElementById("myModal");
+
+      showModalButton.addEventListener("click", () => {
+        modal.style.display = "block";
+      });
+
+      closeModalButton.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      const showModalButtonn = document.getElementById("showModall");
+      const closeModalButtonn = document.getElementById("closeModall");
+      const modall = document.getElementById("myModall");
+
+      showModalButtonn.addEventListener("click", () => {
+        modall.style.display = "block";
+      });
+
+      closeModalButtonn.addEventListener("click", () => {
+        modall.style.display = "none";
+      });
+
+
+      const showProfilButtonn = document.getElementById("showProfil");
+      const closeprofilButtonn = document.getElementById("closeProfil");
+      const profil = document.getElementById("myProfil");
+
+      showProfilButtonn.addEventListener("click", () => {
+        profil.style.display = "block";
+      });
+
+      closeprofilButtonn.addEventListener("click", () => {
+        profil.style.display = "none";
+      });
+
+
+//deroulement des inforations d'une institut
+      document.addEventListener('DOMContentLoaded', function() {
+    const nomecoles = document.querySelectorAll('.nomecole');
+
+    nomecoles.forEach(function(nomecole) {
+        nomecole.addEventListener('click', function() {
+            const imgshow = nomecole.querySelector('.imgshow');
+            const imghide = nomecole.querySelector('.imghide');
+            const ecolecontain = nomecole.parentElement.querySelector('.ecolecontain');
+
+            if (imgshow.style.display === 'block') {
+                imgshow.style.display = 'none';
+                imghide.style.display = 'block';
+                ecolecontain.style.display = 'none';
+            } else {
+                imgshow.style.display = 'block';
+                imghide.style.display = 'none';
+                ecolecontain.style.display = 'block';
+            }
+
+        });
+    });
+});
+
+
+
+//ajax et affichage dans la classe container
+
+document.addEventListener('DOMContentLoaded', function () {
+  const links = document.querySelectorAll('.menu a');
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault(); // Empêche le comportement de lien par défaut
+
+      const route = link.getAttribute('data-route'); // Obtenez la route depuis l'attribut data-route
+      const container = document.querySelector('.container');
+
+      // Effectuez un appel AJAX pour obtenir le contenu de la route
+      fetch(route)
+        .then(function (response) {
+          if (response.ok) {
+            return response.text();
+          } else {
+            throw new Error('Réponse du serveur invalide');
+          }
+        })
+        .then(function (data) {
+          // Mettez à jour le contenu de la classe container avec la réponse
+          container.innerHTML = data;
+        })
+        .catch(function (error) {
+          console.error('Erreur :', error);
+        });
+    });
+  });
+});
+
+
+    
+    </script>
+  </body>
+</html>
